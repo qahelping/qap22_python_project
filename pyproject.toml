@@ -12,6 +12,7 @@ exclude = '''
   | allure-results
   | allure-report
   | .pytest_cache
+  | main.py
 )/
 '''
 
@@ -19,19 +20,6 @@ exclude = '''
 profile = "black"
 line_length = 120
 skip = [
-    "venv",
-    ".venv",
-    "env",
-    ".git",
-    "__pycache__",
-    "allure-results",
-    "allure-report",
-    ".pytest_cache",
-]
-
-[tool.flake8]
-max-line-length = 120
-exclude = [
     "venv",
     ".venv",
     "env",
