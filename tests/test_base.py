@@ -1,12 +1,10 @@
-import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from selenium import webdriver
 from selenium.webdriver.common.by import By
-
 
 BASE_URL = 'http://localhost:3000'
 SUBSCRIPTION = f'{BASE_URL}/automation-lab/subscription'
+
 
 def test_open_subscription():
     opts = Options()
