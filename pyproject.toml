@@ -28,3 +28,16 @@ skip = [
     "allure-report",
     ".pytest_cache",
 ]
+
+[tool.flake8]
+max-line-length = 120
+exclude = [
+    "venv",
+    ".venv",
+    "env",
+    ".git",
+    "__pycache__",
+    "allure-results",
+    "allure-report",
+    ".pytest_cache",
+]
