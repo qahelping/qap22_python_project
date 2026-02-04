@@ -92,7 +92,7 @@ git config --global user.email "you@example.com"
 ```
 
 **Клонирование проекта**
-```bash 
+```bash
 git clone https://github.com/qahelping/qap22_python_project
 ```
 ---
@@ -131,7 +131,16 @@ pytest -q
 pytest          # стандартный вывод
 pytest -v       # подробные имена тестов
 pytest -q       # тихий режим
+pytest tests/test_pytest/test_intro.py -v -s --cache-clear --tb=short  # пример
 ```
+
+Полезные флаги на практике
+```bash
+#-s — не захватывать stdout/stderr (удобно для дебага print)
+#--lf — запустить только “упавшие” на прошлом прогоне
+#--ff — сначала упавшие, потом остальные
+#--durations=10 — показать 10 самых долгих тестов
+```bash
 
 **Отбор тестов:**
 
