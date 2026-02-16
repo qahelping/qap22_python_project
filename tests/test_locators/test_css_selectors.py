@@ -4,35 +4,31 @@ from selenium.webdriver.common.by import By
 URL = "http://localhost:3000/automation-lab"
 
 
-def get_css_element(driver, selector):
-    return driver.find_element(By.CSS_SELECTOR, selector)
-
-
 @pytest.mark.selenium
 def test_traditional_locators(driver):
     driver.get(URL)
     breakpoint()
 
-    get_css_element(driver, "input")
-    get_css_element(driver, ".features")
-    get_css_element(driver, ".pill.pill--accent")
-    get_css_element(driver, ".features .section-head")
-    get_css_element(driver, "#wt-sky-root")
-    get_css_element(driver, '[href="/automation-lab/subscription"]')
-    get_css_element(driver, '[id="wt-sky-root"]')
-    get_css_element(driver, '[class="features"]')
-    get_css_element(driver, '[class="pill pill--accent"]')
-    get_css_element(driver, '.case-element [data-card-id="card_39550"] .bank .bank__name')
-    get_css_element(driver, "section.case-card .card--classic .balance__value")
-    get_css_element(driver, ".card__holder-name + .card__bottom")
-    get_css_element(driver, ".card__holder-name + .card__bottom")
-    get_css_element(driver, '[href^="/automation"]')
-    get_css_element(driver, '[href$="lab"]')
-    get_css_element(driver, '[href$="lab"]')
-    get_css_element(driver, '[href*="auto"]')
-    get_css_element(driver, '[href*="auto"]')
+    driver.find_element(By.CSS_SELECTOR, "input")
+    driver.find_element(By.CSS_SELECTOR, ".features")
+    driver.find_element(By.CSS_SELECTOR, ".pill.pill--accent")
+    driver.find_element(By.CSS_SELECTOR, ".features .section-head")
+    driver.find_element(By.CSS_SELECTOR, "#wt-sky-root")
+    driver.find_element(By.CSS_SELECTOR, '[href="/automation-lab/subscription"]')
+    driver.find_element(By.CSS_SELECTOR, '[id="wt-sky-root"]')
+    driver.find_element(By.CSS_SELECTOR, '[class="features"]')
+    driver.find_element(By.CSS_SELECTOR, '[class="pill pill--accent"]')
+    driver.find_element(By.CSS_SELECTOR, '.case-element [data-card-id="card_39550"] .bank .bank__name')
+    driver.find_element(By.CSS_SELECTOR, "section.case-card .card--classic .balance__value")
+    driver.find_element(By.CSS_SELECTOR, ".card__holder-name + .card__bottom")
+    driver.find_element(By.CSS_SELECTOR, ".card__holder-name + .card__bottom")
+    driver.find_element(By.CSS_SELECTOR, '[href^="/automation"]')
+    driver.find_element(By.CSS_SELECTOR, '[href$="lab"]')
+    driver.find_element(By.CSS_SELECTOR, '[href$="lab"]')
+    driver.find_element(By.CSS_SELECTOR, '[href*="auto"]')
+    driver.find_element(By.CSS_SELECTOR, '[href*="auto"]')
 
-    get_css_element(driver, ".features-grid .feature-card:first-child")
-    get_css_element(driver, ".features-grid .feature-card:last-child")
-    get_css_element(driver, ".features-grid .feature-card:nth-child(3)")
-    get_css_element(driver, ".info-card--problem code")
+    driver.find_element(By.CSS_SELECTOR, ".features-grid .feature-card:first-child")
+    driver.find_element(By.CSS_SELECTOR, ".features-grid .feature-card:last-child")
+    driver.find_element(By.CSS_SELECTOR, ".features-grid .feature-card:nth-child(3)")
+    driver.find_element(By.CSS_SELECTOR, ".info-card--problem code")
