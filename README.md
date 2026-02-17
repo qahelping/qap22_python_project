@@ -174,3 +174,11 @@ pytest --maxfail=1   # то же
 pytest -ra           # причины skip/xfail
 pytest -s            # показать print()/stdout
 ```
+
+
+```bash
+allure serve allure-results
+
+allure generate allure-results -o allure-report --clean
+allure serve
+```
