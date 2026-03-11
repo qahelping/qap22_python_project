@@ -7,8 +7,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.ui import WebDriverWait
 
-from files import BASE_DIR, IMG_2
-
 url = "https://letcode.in/test"
 
 
@@ -118,7 +116,7 @@ def test_upload(driver):
     driver.get(url)
 
     element = driver.find_element(By.CSS_SELECTOR, 'input[type="file"]')
-    element.send_keys(str(IMG_2))
+    # element.send_keys(str(IMG_2))
 
     element = driver.find_element(By.CSS_SELECTOR, '[class="label ng-star-inserted"]')
     assert element.text == "Selected File: red_panda.png"
@@ -138,10 +136,10 @@ def test_download_experimental_option():
     file_path = "http://the-internet.herokuapp.com/download/foto2.png"
     response = urllib.request.urlopen(file_path)
 
-    file = open(BASE_DIR / "files" / "foto2.png", "wb")
-    file.write(response.read())
-
-    file.close()
+    # file = open(BASE_DIR / "files" / "foto2.png", "wb")
+    # file.write(response.read())
+    #
+    # file.close()
 
 
 def test_upload2(driver):
@@ -149,7 +147,7 @@ def test_upload2(driver):
     driver.get(url)
 
     element = driver.find_element(By.CSS_SELECTOR, 'input[type="file"]')
-    element.send_keys(str(IMG_2))
+    # element.send_keys(str(IMG_2))
 
     element = driver.find_element(By.ID, "file-submit")
     element.click()
@@ -171,7 +169,6 @@ def click(driver, selector, timeout=10):
     element.click()
 
 
-@pytest.mark.only
 def test_expected_conditions(driver):
     url = "https://practice-automation.com/javascript-delays/"
     driver.get(url)
