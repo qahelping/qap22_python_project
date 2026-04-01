@@ -35,7 +35,7 @@ jobs:
         pytest tests/test_jenkins.py -v --junitxml=reports/results.xml
 
     - name: Upload Report
-      if: always
+      if: always()
       uses: actions/upload-artifact@v4
       with:
         name: report
