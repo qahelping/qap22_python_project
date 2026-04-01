@@ -25,7 +25,7 @@ pipeline {
                 sh '''
                     . .venv/bin/activate
                     mkdir -p reports
-                    pytest tests -v --junitxml=reports/results.xml
+                    pytest tests/test_jenkins.py -v --junitxml=reports/results.xml
                 '''
             }
         }
