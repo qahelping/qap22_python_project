@@ -1,3 +1,7 @@
+import pytest
+import requests
+
+
 def test_sum():
     assert 2 + 2 == 4
 
@@ -40,10 +44,6 @@ def get_status(code):
 
 def test_failed_example():
     assert 10 == 5
-
-
-import pytest
-import requests
 
 
 # список всех породы
