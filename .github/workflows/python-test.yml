@@ -1,0 +1,42 @@
+name: Python Test
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ "3.11" ]
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        python --version
+        python -m venv .venv
+        . .venv/bin/activate
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Analysing the code with pylint
+      run: |
+        . .venv/bin/activate
+        flake8 tests/test_jenkins.py
+
+
+    - name: Run test
+      run: |
+        . .venv/bin/activate
+        mkdir -p reports
+        pytest tests/test_jenkins.py -v --junitxml=reports/results.xml
+
+    - name: Upload Report
+      if: always
+      uses: actions/upload-artifact@v4
+      with:
+        name: report
+        path: reports/results.xml
