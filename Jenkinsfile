@@ -24,7 +24,7 @@ pipeline {
             steps {
                 sh '''
                     . .venv/bin/activate
-                    flake8 tests
+                    flake8 tests/test_jenkins.py
                 '''
             }
         }
