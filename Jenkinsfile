@@ -20,6 +20,15 @@ pipeline {
             }
         }
 
+        stage('Lint') {
+            steps {
+                sh '''
+                    . .venv/bin/activate
+                    flake8 tests
+                '''
+            }
+        }
+
         stage('Run tests') {
             steps {
                 sh '''
